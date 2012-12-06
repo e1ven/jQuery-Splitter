@@ -1,7 +1,7 @@
 /*
  * jQuery.splitter.js - two-pane splitter window plugin
  *
- * version 1.6 (2010/01/03) 
+ * version 1.61 (06/12/2012) 
  * 
  * Dual licensed under the MIT and GPL licenses: 
  *   http://www.opensource.org/licenses/mit-license.php 
