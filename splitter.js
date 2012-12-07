@@ -34,11 +34,11 @@
 
 var splitterCounter = 0;
 
- $.fn.splitter = function(args){
+$.fn.splitter = function(args){
 	args = args || {};
 	return this.each(function() {
-		if ( $(this).is(".splitter") )	// already a splitter
-			return;
+		//if ( $(this).is(".splitter") ) return;	// already a splitter
+		if ( $(this).attr("data-splitter-initialized") ) return
 		var zombie;		// left-behind splitbar for outline resizes
 		function resize_auto_fired() {
   			// Returns true when the browser natively fires the resize 
@@ -191,7 +191,7 @@ var splitterCounter = 0;
 		opts.barStateClasses = [opts.barNormalClass, opts.barHoverClass, opts.barActiveClass, opts.barLimitClass].join(' ');
 
         // Create jQuery object closures for splitter and both panes
-        var splitter = $(this).css({position: "relative"}).addClass(opts.splitterClass);
+        var splitter = $(this).css({position: "relative"}).addClass(opts.splitterClass).attr("data-splitter-initialized",true)
         var panes = $(">*", splitter[0]).addClass(opts.paneClass).css({
             position: "absolute",           // positioned inside splitter container
             "z-index": "1",                 // splitbar is positioned above
@@ -321,7 +321,6 @@ var splitterCounter = 0;
 					});
             bar.bind("dblclick", function(){ splitter.triggerHandler("toggleDock"); })
 		}
-
 		
 		// Resize event handler; triggered immediately to set initial position
 		splitter
