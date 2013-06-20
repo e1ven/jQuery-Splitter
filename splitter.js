@@ -119,7 +119,7 @@ $.fn.splitter = function(args){
 			B.css(opts.origin, pos+bar._DA)
 				.css(opts.split, splitter._DA-bar._DA-pos).css(opts.fixed,  splitter._DF);
 			// IE fires resize for us; all others pay cash
-            if ( !resize_auto_fired() ) panes.triggerHandler("resize");
+            if ( !resize_auto_fired() ) panes.trigger("resize");
 		}
 		function dimSum(jq, dims) {
 			// Opera returns -1 for missing min/max width, turn into 0
