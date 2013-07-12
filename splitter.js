@@ -14,7 +14,7 @@
  * each selected element should have two child elements, used for the panes
  * of the splitter. The plugin adds a third child element for the splitbar.
  * 
- * For more details see: http://methvin.com/jquery/splitter/
+ * For more details see: http://methvin.com/splitter/
  *
  *
  * @example $('#MySplitter').splitter();
