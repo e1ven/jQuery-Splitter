@@ -253,8 +253,9 @@ $.fn.splitter = function(args){
 			initPos = splitter[0][opts.pxSplit] - splitter._PBA - B._init - bar._DA;
 		if ( opts.cookie ) {
 			if ( !$.cookie )
-				alert('jQuery.splitter(): jQuery cookie plugin required');
-			initPos = parseInt($.cookie(opts.cookie),10);
+			  alert('jQuery.splitter(): jQuery cookie plugin required');
+			if($.cookie(opts.cookie) != null)
+			  initPos = parseInt($.cookie(opts.cookie),10);
 			$(window).bind("unload"+opts.eventNamespace, function(){
 				var state = String(bar.css(opts.origin));	// current location of splitbar
 				$.cookie(opts.cookie, state, {expires: opts.cookieExpires || 365, 
